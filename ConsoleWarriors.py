@@ -72,20 +72,12 @@ ADINIZI YAZINIZ:
 
 UserName = input("")
 
-
-
-
-
-
-
-
 while HumanHealth >= 0 and ComHealth >= 0:
     raund += 1
     HumanHealthBar = int(HumanHealth / 10) * "X" + int(10 - HumanHealth /10)  * "-"
     ComHealthBar = int( 10 - ComHealth/10) * "-" + int(ComHealth/10) * "X"
 
     Strike = random.randint(1,20)
-
 
     print("""
      -------------------- {}. Raund başladı! --------------------
@@ -117,8 +109,6 @@ while HumanHealth >= 0 and ComHealth >= 0:
     else:
         print("Iskaladın! ")
         HumanGuess = 1040
-
-
     if ComGuard == HumanGuess:
         ComHealth = ComHealth - Strike
         print("Tebrikler, vurdun. COM kullanıcısından {} canı gitti. {} canı kaldı.".format(Strike,ComHealth))
@@ -127,13 +117,10 @@ while HumanHealth >= 0 and ComHealth >= 0:
             print("COM kullanıcına hiç vuruş yapamadığın {} canı ile savaşa devam ediyor.".format(ComHealth))
         else:
             print("Bilemedin. COM kullanıcısı {} sayısını seçmişti. Sen {} sayıyı seçtin. COM kullanıcısının canı hala {}".format(ComGuard,HumanGuess,ComHealth))
-
-
     if ComHealth < 0:
         print("COM kullanıcısı öldü!")
         break
-
-
+#   Kodlardaki karakterler yer değiştiriyor.
 
     print("\nŞimdi vurma sırası COM kullanıcısında!")
 
@@ -163,14 +150,11 @@ while HumanHealth >= 0 and ComHealth >= 0:
         saveGame.close()
         break
 
-
     elif HumanGuard == "PES":
         HumanHealth = -1
     # else:
     #     print("CEZA! Hile yaptın ve 15 canın silinecek")
     #     HumanGuard = 1040
-
-
 
     print("Bilgisayar tahmin yapıyor!")
     ComGuess = random.randint(1,5)
@@ -191,9 +175,7 @@ while HumanHealth >= 0 and ComHealth >= 0:
             print("Kurtuldun! Sen {} sayısını seçmiştin. COM kullanıcısı ise {} sayısını seçti. Senin hala {} canın var!".format(HumanGuard,ComGuess,HumanHealth))
 
     print("\n"*20)
-
-
-
+# Artık savas bitiyor ve sonuc ekranı yazdırılıyor.
 
 print("\n\n Savaş Bitti!")
 print("""
@@ -217,7 +199,6 @@ else:
 
     {} FARKLA OYUNU KAZANDIN.
     """.format(HumanHealth-ComHealth))
-
 
 close = ""
 while close != "q" or close != "Q":
